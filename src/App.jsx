@@ -55,7 +55,7 @@ function MainSystem() {
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-3">
-            <img src="/hak-logo.png" alt="Hvittingfoss Alpinklubb" className="h-12 w-auto object-contain" />
+            <img src={`${import.meta.env.BASE_URL}hak-logo.png`} alt="Hvittingfoss Alpinklubb" className="h-12 w-auto object-contain" />
             <div className="hidden min-w-0 border-l border-slate-200 pl-3 sm:block">
               <p className="truncate text-sm font-bold text-[#0A1E6E]">HMS-portal</p>
               <p className="text-xs text-slate-500">Frivillig og sikkerhet</p>

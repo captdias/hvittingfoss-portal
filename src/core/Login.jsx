@@ -23,7 +23,7 @@ export default function Login() {
       <Card className="mx-auto w-full max-w-md p-8">
         <div className="mb-6 flex flex-col items-center">
           <img
-            src="/hak-logo.png"
+            src={`${import.meta.env.BASE_URL}hak-logo.png`}
             alt="Hvittingfoss Alpinklubb"
             className="mb-5 h-auto w-full max-w-[260px] object-contain"
           />
