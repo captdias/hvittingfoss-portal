@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "./AuthContext";
-import { Mountain } from "lucide-react";
+import { Button, Card } from "./ui";
 
 export default function Login() {
   const { login } = useAuth();
@@ -19,14 +19,15 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col justify-center px-6">
-      <div className="max-w-md w-full mx-auto bg-white p-8 rounded-2xl shadow-sm">
-        <div className="flex flex-col items-center mb-6">
-          <div className="bg-blue-600 p-3 rounded-full text-white mb-3">
-            <Mountain size={32} />
-          </div>
-          <h1 className="text-2xl font-bold text-slate-900">Hvittingfoss Alpinklubb</h1>
-          <p className="text-slate-500 text-sm">Sikkerhetsstyring & Frivilligportal</p>
+    <div className="flex min-h-screen flex-col justify-center bg-slate-50 px-6 py-10">
+      <Card className="mx-auto w-full max-w-md p-8">
+        <div className="mb-6 flex flex-col items-center">
+          <img
+            src="/hak-logo.png"
+            alt="Hvittingfoss Alpinklubb"
+            className="mb-5 h-auto w-full max-w-[260px] object-contain"
+          />
+          <p className="text-sm text-slate-500">Sikkerhetsstyring & Frivilligportal</p>
         </div>
 
         {error && <p className="bg-red-50 text-red-600 p-3 rounded-lg text-sm mb-4">{error}</p>}
@@ -39,7 +40,7 @@ export default function Login() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full h-12 px-4 rounded-xl border border-slate-300 text-base focus:outline-none focus:border-blue-600"
+              className="h-12 w-full rounded-xl border border-slate-300 px-4 text-base focus:border-[#0A1E6E] focus:outline-none focus:ring-2 focus:ring-[#D90416]/30"
               placeholder="navn@epost.no"
             />
           </div>
@@ -50,18 +51,15 @@ export default function Login() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full h-12 px-4 rounded-xl border border-slate-300 text-base focus:outline-none focus:border-blue-600"
+              className="h-12 w-full rounded-xl border border-slate-300 px-4 text-base focus:border-[#0A1E6E] focus:outline-none focus:ring-2 focus:ring-[#D90416]/30"
               placeholder="••••••••"
             />
           </div>
-          <button
-            type="submit"
-            className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition"
-          >
+          <Button type="submit" className="w-full">
             Logg inn
-          </button>
+          </Button>
         </form>
-      </div>
+      </Card>
     </div>
   );
 }
